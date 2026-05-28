@@ -57,7 +57,7 @@ dr-detection/
 |------|---------|---------|
 | Python | 3.10+ | https://python.org |
 | Node.js | 18+ | https://nodejs.org |
-| PostgreSQL | 14+ | `brew install postgresql@16` |
+| PostgreSQL | 14+ | (macos)`brew install postgresql@16` | Windows: see below
 
 ---
 
@@ -94,6 +94,72 @@ chmod +x setup.sh start_backend.sh start_frontend.sh
 
 This installs all Python and Node dependencies, with `tensorflow-macos` for Apple Silicon.
 
+---
+
+## Setup — Windows (PowerShell)
+ 
+> Run all commands in **PowerShell as Administrator** unless noted.
+ 
+### 1. Install prerequisites via Chocolatey
+ 
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+ 
+choco install python --version=3.10.11 -y
+choco install nodejs-lts -y
+choco install postgresql16 -y
+```
+ 
+After installation, restart PowerShell so PATH changes take effect.
+ 
+### 2. Place project files
+ 
+Put your pretrained model files inside the `backend/` directory:
+```
+backend/model.weights.h5
+backend/config.json
+backend/metadata.json
+```
+ 
+> **No model files?** The system runs in **demo mode** — predictions are simulated. Everything else works normally.
+ 
+### 3. Set up the database
+ 
+```powershell
+$env:Path += ";C:\Program Files\PostgreSQL\16\bin"
+psql -U postgres -f setup_db.sql
+```
+ 
+> If `psql` is not found, add `C:\Program Files\PostgreSQL\16\bin` to your system PATH manually via System Properties → Environment Variables.
+ 
+### 4. Backend setup
+ 
+```powershell
+cd backend
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
+ 
+> **Important:** `tensorflow-macos` does not work on Windows. If your `requirements.txt` contains `tensorflow-macos` or `tensorflow-metal`, replace those lines with `tensorflow` before running pip install.
+ 
+### 5. Frontend setup
+ 
+```powershell
+cd ..\frontend
+npm install
+```
+ 
+### 6. Fix PowerShell script execution (if .ps1 scripts are blocked)
+ 
+Run this once if you get an "execution policy" error:
+ 
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+ 
 ---
 
 ##  Running
@@ -221,6 +287,86 @@ REPORTS_DIR=reports
 - `psycopg2-binary` works on ARM64 via Homebrew PostgreSQL
 
 ---
+
+## Screenshots
+
+---
+
+### Upload Page
+
+<p align="center">
+  <img src="images/image1.jpeg" alt="Upload Page" width="80%"/>
+</p>
+<p align="center"><i>Upload retinal fundus image along with patient details for DR analysis</i></p>
+
+---
+
+### Patient Dashboard
+
+<p align="center">
+  <img src="images/image2.jpeg" alt="Patient Dashboard" width="80%"/>
+</p>
+<p align="center"><i>Overview of all patient records with DR severity classification and confidence scores</i></p>
+
+---
+
+### Prediction Result
+
+<p align="center">
+  <img src="images/image3.jpeg" alt="Prediction Result" width="80%"/>
+</p>
+<p align="center"><i>AI-generated prediction displaying diabetic retinopathy classification and confidence level</i></p>
+
+---
+
+### Diagnostic Report
+
+<p align="center">
+  <img src="images/image4.jpeg" alt="Diagnostic Report" width="80%"/>
+</p>
+<p align="center"><i>Auto-generated PDF diagnostic report with patient details and clinical findings</i></p>
+
+---
+
+
+## 👥 Team
+ 
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Vigya-G">
+        <img src="/Users/apple/Documents/GitHub/RetinAI/images/facephoto/vigya.jpg" width="100px;" alt="Vigya"/><br/>
+        <sub><b>Vigya Gupta</b></sub>
+      </a><br/>
+      <sub>Your Role</sub><br/>
+      <a href="https://github.com/Vigya-G">
+        <img src="https://img.shields.io/badge/GitHub-Vigya-181717?style=flat&logo=github" alt="GitHub"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/AadarshSahu04">
+        <img src="/Users/apple/Documents/GitHub/RetinAI/images/facephoto/aadarsh.jpeg" width="100px;" alt="Aadarsh"/><br/>
+        <sub><b>Aadrsh Sahu</b></sub>
+      </a><br/>
+      <sub>Their Role</sub><br/>
+      <a href="https://github.com/AadarshSahu04">
+        <img src="https://img.shields.io/badge/GitHub-Aadarsh-181717?style=flat&logo=github" alt="GitHub"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/udittmaheshwari">
+        <img src="/Users/apple/Documents/GitHub/RetinAI/images/facephoto/udit.jpeg" width="100px;" alt="Udit"/><br/>
+        <sub><b>Udit Maheshwari</b></sub>
+      </a><br/>
+      <sub>Their Role</sub><br/>
+      <a href="https://github.com/udittmaheshwari">
+        <img src="https://img.shields.io/badge/GitHub-Udit-181717?style=flat&logo=github" alt="GitHub"/>
+      </a>
+    </td>
+  </tr>
+</table>
+
+
 
 
 
