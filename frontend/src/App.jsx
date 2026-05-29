@@ -40,7 +40,7 @@ export default function App() {
               </div>
               <div>
                 <p className="font-display font-bold text-sm leading-tight text-[var(--text-primary)]">
-                  Ratin AI
+                  Retin AI
                 </p>
                 <p className="text-[10px] text-[var(--text-muted)] leading-tight">
                   Diabetic Retinopathy Detection

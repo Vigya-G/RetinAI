@@ -334,7 +334,7 @@ REPORTS_DIR=reports
 
 <div align="center">
 
-[![Click to View Report](assets/P_Report.png)](assets/RetinAI_Final_Report.pdf)
+[![Click to View Report](assets/P_Report.png)](assets/assets/P_Report.pdf)
 
 
 > 📥 Click on the image above to view the complete sample patient report
