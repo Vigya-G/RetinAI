@@ -48,7 +48,13 @@ app = FastAPI(
 # CORS — allow all origins in development; restrict in production
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:5173", "http://127.0.0.1:3000"],
+    allow_origins=[
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "http://127.0.0.1:3000",
+    "https://retin-ai.vercel.app",
+    "https://retin-2a486xuy9-vigya-s-projects.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
