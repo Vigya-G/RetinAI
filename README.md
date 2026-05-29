@@ -3,6 +3,9 @@
 An AI-powered retinal analysis application for detecting and classifying Diabetic Retinopathy (DR) from fundus photographs.
 
 ---
+🔗 **Live Demo**: [https://retin-ai.vercel.app/](https://retin-ai.vercel.app/)
+
+---
 
 ##  Project Structure
 
@@ -182,6 +185,7 @@ cd frontend && npm run dev
 
 | Service | URL |
 |---------|-----|
+| final project | https://retin-ai.vercel.app/ |
 | Frontend | http://localhost:3000 |
 | API | http://localhost:8000 |
 | Swagger docs | http://localhost:8000/docs |
@@ -292,42 +296,68 @@ REPORTS_DIR=reports
 
 ---
 
-### Upload Page
+### user Interface
 
 <p align="center">
-  <img src="images/image1.jpeg" alt="Upload Page" width="80%"/>
+  <img src="assets/image1.jpeg" alt="Upload Page" width="80%"/>
 </p>
 <p align="center"><i>Upload retinal fundus image along with patient details for DR analysis</i></p>
 
 ---
 
-### Patient Dashboard
+###  Upload Page
 
 <p align="center">
-  <img src="images/image2.jpeg" alt="Patient Dashboard" width="80%"/>
+  <img src="assets/image2.jpeg" alt="Patient Dashboard" width="80%"/>
 </p>
-<p align="center"><i>Overview of all patient records with DR severity classification and confidence scores</i></p>
+<p align="center"><i>Entering patient records for  classification and getting confidence scores</i></p>
 
 ---
 
 ### Prediction Result
 
 <p align="center">
-  <img src="images/image3.jpeg" alt="Prediction Result" width="80%"/>
+  <img src="assets/image3.jpeg" alt="Prediction Result" width="80%"/>
 </p>
 <p align="center"><i>AI-generated prediction displaying diabetic retinopathy classification and confidence level</i></p>
 
 ---
 
-### Diagnostic Report
+###  Patient Dashboard
 
 <p align="center">
-  <img src="images/image4.jpeg" alt="Diagnostic Report" width="80%"/>
+  <img src="assets/image4.jpeg" alt="Diagnostic Report" width="80%"/>
 </p>
-<p align="center"><i>Auto-generated PDF diagnostic report with patient details and clinical findings</i></p>
+<p align="center"><i>Overview of all patient records with DR severity classification and confidence scores</i></p>
+
+### Diagnostic Report
+
+<div align="center">
+
+[![Click to View Report](assets/P_Report.png)](assets/RetinAI_Final_Report.pdf)
+
+
+> 📥 Click on the image above to view the complete sample patient report
+
+</div>
+
 
 ---
 
+
+##  Project Final Report
+
+<div align="center">
+
+[<img src="assets/Report_preview.png" width="400">](assets/RetinAI_Final_Report.pdf)
+
+> 📥 Click on the image above to view the complete project report
+
+</div>
+
+
+
+---
 
 ## 👥 Team
  
@@ -335,36 +365,38 @@ REPORTS_DIR=reports
   <tr>
     <td align="center">
       <a href="https://github.com/Vigya-G">
-        <img src="/Users/apple/Documents/GitHub/RetinAI/images/facephoto/vigya.jpg" width="100px;" alt="Vigya"/><br/>
+        <img src="assets/facephoto/vigya.jpg" width="100px;" alt="Vigya"/><br/>
         <sub><b>Vigya Gupta</b></sub>
       </a><br/>
-      <sub>Your Role</sub><br/>
+      <sub>Developer</sub><br/>
       <a href="https://github.com/Vigya-G">
         <img src="https://img.shields.io/badge/GitHub-Vigya-181717?style=flat&logo=github" alt="GitHub"/>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/AadarshSahu04">
-        <img src="/Users/apple/Documents/GitHub/RetinAI/images/facephoto/aadarsh.jpeg" width="100px;" alt="Aadarsh"/><br/>
+        <img src="assets/facephoto/aadarsh.jpeg" width="110px;" height="135px" alt="Aadarsh"/><br/>
         <sub><b>Aadrsh Sahu</b></sub>
       </a><br/>
-      <sub>Their Role</sub><br/>
+      <sub>Developer</sub><br/>
       <a href="https://github.com/AadarshSahu04">
         <img src="https://img.shields.io/badge/GitHub-Aadarsh-181717?style=flat&logo=github" alt="GitHub"/>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/udittmaheshwari">
-        <img src="/Users/apple/Documents/GitHub/RetinAI/images/facephoto/udit.jpeg" width="100px;" alt="Udit"/><br/>
+        <img src="assets/facephoto/udit.jpeg" width="100px;" height="135" alt="Udit"/><br/>
         <sub><b>Udit Maheshwari</b></sub>
       </a><br/>
-      <sub>Their Role</sub><br/>
+      <sub>Developer</sub><br/>
       <a href="https://github.com/udittmaheshwari">
         <img src="https://img.shields.io/badge/GitHub-Udit-181717?style=flat&logo=github" alt="GitHub"/>
       </a>
     </td>
   </tr>
 </table>
+
+
 
 
 
